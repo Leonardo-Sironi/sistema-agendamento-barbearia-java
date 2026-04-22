@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, incial-scale=1.0">
+    <title> Barberia Reis </title>
+</head>
+<body>
+<h1>Barberia Reis</h1>
+<h2>Sistema de agendamentos (Horarios) </h2>
+<p>Marque seu horario abaixo:</p>
+<label>Nome do cliente: </label>
+<input type="text" id="nome">
+<br><br>
+
+<label>Telefone do cliente: </label>
+<input type="text" id="telefone">
+<br><br>
+
+<label>Horario do cliente> </label>
+<input type="text" id="horario">
+<br><br>
+
+<button id="botaoAgendar">AGENDAR</button>
+
+<h3>Agendamentos:</h3>
+<div id="lista"></div>
+
+</body>
+<script>
+    const botao = document.getElementById("botaoAgendar");
+    botao.addEventListener("click", function () {
+        let nome= document.getElementById("nome").value;
+        let telefone= document.getElementById("telefone").value;
+        let horario= document.getElementById("horario").value;
+
+        console.log(nome);
+        console.log(telefone);
+        console.log(horario);
+
+        let lista = document.getElementById("lista");
+        lista.innerHTML += "<p>" + nome + " - " + telefone + " - " + horario + "</p>";
+
+        document.getElementById("nome").value = "";
+        document.getElementById("telefone").value = "";
+        document.getElementById("horario").value = "";
+
+
+    });
+
+
+</script>
+</html>
